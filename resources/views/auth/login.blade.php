@@ -41,12 +41,6 @@
           <div class="row">
             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
               <div class="card card-plain">
-                @if($errors->any())
-                <div class="form-group alert alert-danger alert-dismissable text-white">
-                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                    <strong>{{$errors->first()}}</strong>
-                </div>
-            @endif
                 <div class="card-header pb-0 text-start">
                   <h4 class="font-weight-bolder">Sign In</h4>
                   <p class="mb-0">Enter your email and password to sign in</p>
@@ -72,6 +66,11 @@
                         </div>
                     </div>
                 </form>
+                @if($errors->any())
+                    <div class="form-group alert alert-danger alert-dismissable text-white">
+                        <strong>{{$errors->first()}}</strong>
+                    </div>
+                @endif
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
                     <a href="{{ route('password.request') }}" class="text-primary text-gradient font-weight-bold">Forgot password?</a>
